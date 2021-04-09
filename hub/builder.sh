@@ -2,7 +2,7 @@
 
 # Builder script for the basic web server
 
-. settings.sh
+. ./settings.sh
 
 # Start by removing the previous image
 buildah rmi --force $image
