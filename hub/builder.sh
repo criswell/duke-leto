@@ -3,7 +3,7 @@
 image=lighttpd-core-site
 
 # Start by removing the previous image
-buildah rmi $image
+buildah rmi --force $image
 
 httpd_cont=$(buildah from docker.io/sebp/lighttpd:latest)
 
