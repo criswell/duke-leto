@@ -1,6 +1,4 @@
-#!/bin/sh
-
-# Stops the hub, then cleans it up
+#!/bin/bash
 
 . ./settings.sh
 
