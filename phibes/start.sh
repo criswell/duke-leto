@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Starts the hub
-
 . ./settings.sh
 
 podman rm --force $instance
-podman create -t -p 80:80 --name $instance $image
+podman create -t --name $instance $image
 podman start $instance
