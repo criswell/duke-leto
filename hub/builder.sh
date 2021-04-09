@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Builder script for the basic web server
 
 image=lighttpd-core-site
