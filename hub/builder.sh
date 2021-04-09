@@ -13,3 +13,4 @@ buildah config --entrypoint "/usr/local/bin/start.sh"
 
 buildah commit $httpd_cont $image
 
+buildah rm $httpd_cont
