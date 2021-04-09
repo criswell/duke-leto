@@ -2,7 +2,7 @@
 
 # Builder script for the basic web server
 
-image=lighttpd-core-site
+. settings.sh
 
 # Start by removing the previous image
 buildah rmi --force $image

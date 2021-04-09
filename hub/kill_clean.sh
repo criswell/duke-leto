@@ -2,7 +2,7 @@
 
 # Stops the hub, then cleans it up
 
-instance=hub
+. settings.sh
 
 podman stop hub
 podman rm --force hub
