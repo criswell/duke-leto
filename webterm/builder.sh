@@ -6,6 +6,7 @@ buildah rmi --force $image
 
 webssh2_cont=$(buildah from registry.opensuse.org/opensuse/tumbleweed:latest)
 
+buildah run $webssh2_cont zypper -y in crun
 buildah run $webssh2_cont mdkir -p /var/buildah-data 
 buildah copy $webssh2_cont data/config.json /var/buildah-data/.
 buildah copy $webssh2_cont data/setup.sh /var/buildah-data/.
