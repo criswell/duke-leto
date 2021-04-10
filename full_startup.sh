@@ -10,6 +10,8 @@ PWD=${PWD%/}
 images=('hub', 'phibes', 'webterm')
 
 for image in "${images[@]}"; do
+  echo "=============================================================="
+  echo "PROCESSING ${image}....."
   cd $image
   ./kill_clean.sh
   ./builder.sh
