@@ -17,4 +17,4 @@ buildah config --port 2222 $webssh2_cont
 
 buildah commit $webssh2_cont $image
 
-builda rm $webssh2_cont
+buildah rm $webssh2_cont
