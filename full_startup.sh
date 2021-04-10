@@ -7,7 +7,7 @@ PWD=$(pwd)
 PWD=${PWD%/}
 
 # Would be super-duper awesome if we could define dependencies
-images=('hub', 'phibes', 'webterm')
+images=('hub' 'phibes' 'webterm')
 
 for image in "${images[@]}"; do
   echo "=============================================================="
