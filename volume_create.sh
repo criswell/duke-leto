@@ -3,7 +3,7 @@
 . ./global.sh
 
 # Phibes volume
-if $(podman volume exists $phibes_vol) ; then
+if podman volume inspect $phibes_vol ; then
   echo ">>> phibes volume already exists!"
 else
   echo ">>> Creating phibes volume!"
