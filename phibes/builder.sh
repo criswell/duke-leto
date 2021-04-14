@@ -1,7 +1,7 @@
 #!/bin/bash
 
 . ./settings.sh
-.. ./global.sh
+. ../global.sh
 
 ../volume_create.sh
 
