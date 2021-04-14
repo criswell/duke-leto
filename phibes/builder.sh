@@ -3,8 +3,6 @@
 . ./settings.sh
 . ../global.sh
 
-../volume_create.sh
-
 buildah rmi --force $image
 
 python_cont=$(buildah from docker.io/library/python:$py_ver)
