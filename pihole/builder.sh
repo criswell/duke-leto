@@ -14,6 +14,7 @@ PIHOLE_ADMIN_PASS=$(\
   --path $phibes_path --item $pihole_pass | \
   awk '/----------/{flag=1; next} /----------/{flag=0} flag')
 
+buildah config -e TERM=$TERM $pihole_cont
 buildah run $pihole_cont pihole -a -p $PIHOLE_ADMIN_PASS
 
 buildah commit $pihole_cont $image
