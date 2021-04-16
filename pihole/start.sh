@@ -5,7 +5,6 @@
 
 podman rm --force $instance
 podman create -t \
-              --ip=10.0.0.2 \
               --dns=127.0.0.1 \
               --dns=1.1.1.1 \
               -p 10.0.0.2:443:443 \
