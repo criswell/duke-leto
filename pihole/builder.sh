@@ -3,6 +3,7 @@
 # Stick it in your pi-hole
 
 . ./settings.sh
+. ../global.sh
 
 buildah rmi --force $image
 
