@@ -24,3 +24,10 @@ else
   echo ">>> Creating pihole dnsmasq volume!"
   podman volume create $pihole_dnsmasq_vol
 fi
+
+if podman volume inspect $pihole_persist_vol ; then
+  echo ">>> pihole persist volume already exists!"
+else
+  echo ">>> Creating pihole persist volume!"
+  podman volume create $pihole_persist_vol
+fi
