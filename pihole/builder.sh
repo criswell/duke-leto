@@ -23,6 +23,9 @@ buildah run $pihole_cont \
   wget https://www.internic.net/domain/named.root -q -o /var/lib/unbound/root.hints
 
 buildah copy $pihole_cont data/pi-hole.conf /etc/unbound/unbound.conf.d/pi-hole.conf
+buildah copy $pihole_cont data/custom_start.sh /custom_start.sh
+
+buildah config --entrypoint '["/custom_start.sh"]' $pihole_cont
 
 buildah commit $pihole_cont $image
 
