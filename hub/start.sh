@@ -6,7 +6,7 @@
 
 podman rm --force $instance
 podman create -t \
-              -p 10.0.0.10:80:80 \
+              -p 80:80 \
               --restart=always \
               --replace=true \
               --name $instance $image
