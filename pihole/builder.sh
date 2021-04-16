@@ -17,6 +17,13 @@ PIHOLE_ADMIN_PASS=$(\
 buildah config -e TERM=$TERM $pihole_cont
 buildah run $pihole_cont pihole -a -p $PIHOLE_ADMIN_PASS
 
+buildah run $pihole_cont apt update
+buildah run $pihole_cont apt install -y unbound
+buildah run $pihole_cont \
+  wget https://www.internic.net/domain/named.root -q -o /var/lib/unbound/root.hints
+
+buildah copy $pihole_cont data/pi-hole.conf /etc/unbound/unbound.conf.d/pi-hole.conf
+
 buildah commit $pihole_cont $image
 
 buildah rm $python_cont
