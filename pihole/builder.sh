@@ -29,4 +29,4 @@ buildah config --entrypoint '["/custom_start.sh"]' $pihole_cont
 
 buildah commit $pihole_cont $image
 
-buildah rm $python_cont
+buildah rm $pihole_cont
