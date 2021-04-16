@@ -9,7 +9,8 @@ podman create -t \
               --dns=1.1.1.1 \
               -p 10.0.0.2:443:443 \
               -p 10.0.0.2:80:80 \
-              -p 10.0.0.2:53:53 \
+              -p 10.0.0.2:53:53/tcp \
+              -p 10.0.0.2:53:53/udp \
               --restart=always \
               --replace=true \
               --volume=$pihole_etc_vol:$pihole_etc_path \
