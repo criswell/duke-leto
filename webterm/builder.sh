@@ -20,7 +20,7 @@ buildah copy $webssh2_cont data/start.sh /var/buildah-data/.
 buildah run $webssh2_cont /var/buildah-data/setup.sh $sam_pass
 buildah config --entrypoint '["/var/buildah-data/start.sh"]' $webssh2_cont
 buildah config --port 2222 $webssh2_cont
-builhad config --port 22 $webssh2_cont
+buildah config --port 22 $webssh2_cont
 
 buildah commit $webssh2_cont $image
 
