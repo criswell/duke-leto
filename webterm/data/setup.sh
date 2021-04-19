@@ -19,4 +19,5 @@ mkdir -p /home
                   -N \
                   -s /bin/zsh sam
 
+echo "sam:$1"
 echo "sam:$1" | /usr/sbin/chpasswd
