@@ -16,7 +16,6 @@ mkdir -p /home
 /usr/sbin/useradd -M \
                   -g 1000 \
                   -d /home/sam \
-                  -N \
                   -s /bin/zsh
 
 echo "sam:$1" | /usr/sbin/chpasswd
