@@ -14,3 +14,4 @@ pihole_persist_path=/opt/pihole-storage
 
 # Passwords
 pihole_pass=pihole-pass
+sam_pass=sam-pass
