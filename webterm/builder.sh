@@ -1,6 +1,7 @@
 #!/bin/bash
 
 . ./settings.sh
+.. ./global.sh
 
 buildah rmi --force $image
 
