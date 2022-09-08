@@ -17,6 +17,9 @@ PIHOLE_ADMIN_PASS=$(\
 buildah config -e TERM=$TERM $pihole_cont
 buildah run $pihole_cont pihole -a -p $PIHOLE_ADMIN_PASS
 
+buildah copy $pihole_cont data/setup.sh /setup.sh
+buildah run $pihole_cont /setup.sh
+
 buildah run $pihole_cont apt update
 buildah run $pihole_cont apt install -y unbound wget
 buildah run $pihole_cont \
