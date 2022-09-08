@@ -17,18 +17,19 @@ PIHOLE_ADMIN_PASS=$(\
 buildah config -e TERM=$TERM $pihole_cont
 buildah run $pihole_cont pihole -a -p $PIHOLE_ADMIN_PASS
 
-buildah copy $pihole_cont data/setup.sh /setup.sh
-buildah run $pihole_cont /setup.sh
+#buildah copy $pihole_cont data/setup.sh /setup.sh
+#buildah run $pihole_cont /setup.sh
 
-buildah run $pihole_cont apt update
-buildah run $pihole_cont apt install -y unbound wget
-buildah run $pihole_cont \
-  wget https://www.internic.net/domain/named.root -q -o /var/lib/unbound/root.hints
+#buildah run $pihole_cont apt update
+#buildah run $pihole_cont apt install -y unbound wget
+#buildah run $pihole_cont \
+#  wget https://www.internic.net/domain/named.root -q -o /var/lib/unbound/root.hints
 
-buildah copy $pihole_cont data/pi-hole.conf /etc/unbound/unbound.conf.d/pi-hole.conf
-buildah copy $pihole_cont data/custom_start.sh /custom_start.sh
+#buildah copy $pihole_cont data/pi-hole.conf /etc/unbound/unbound.conf.d/pi-hole.conf
+#buildah copy $pihole_cont data/custom_start.sh /custom_start.sh
 
-buildah config --entrypoint '["/custom_start.sh"]' $pihole_cont
+#buildah config --entrypoint '["/custom_start.sh"]' $pihole_cont
+buildah config --entrypoint '["/s6-init"]' $pihole_cont
 
 buildah commit $pihole_cont $image
 
