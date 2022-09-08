@@ -1,4 +1,6 @@
 #!/bin/bash
 
-sudo /etc/init.d/unbound start
-sudo /s6-init
+echo "net.core.rmem_max=1048576" >> /etc/sysctl.conf
+
+/etc/init.d/unbound start
+/s6-init
