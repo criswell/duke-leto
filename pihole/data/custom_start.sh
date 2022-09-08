@@ -1,4 +1,4 @@
 #!/bin/bash
 
-/etc/init.d/unbound start
-/s6-init
+sudo /etc/init.d/unbound start
+sudo /s6-init
